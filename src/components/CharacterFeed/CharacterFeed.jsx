@@ -27,7 +27,7 @@ const CharacterFeed = () => {
     setCurrentPage(1);
   }, [selectedEpisode]);
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <div>Characters Loading...</div>;
 
   if (error) return <div>{error}</div>;
 
@@ -36,7 +36,6 @@ const CharacterFeed = () => {
       <h2 className="text-lg font-bold mb-4 p-2 text-center">
         {selectedEpisode?.name} Characters
       </h2>
-
       <div className="flex-1 overflow-hidden">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 h-full overflow-auto">
           {currentCharacters.map((character) => (
