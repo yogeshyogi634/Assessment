@@ -10,7 +10,7 @@ const CharacterFeed = lazy(() =>
 function App() {
   return (
     <EpisodeProvider>
-      <Suspense fallback={<div>Loading components...</div>}>
+      <Suspense fallback={<div>Loading...</div>}>
         <div className="flex">
           {/* Sidebar for episodes */}
           <EpisodeList />
