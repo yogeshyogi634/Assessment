@@ -7,7 +7,7 @@ const CharacterFeed = lazy(() =>
   import("./components/CharacterFeed/CharacterFeed")
 );
 
-const App = () => {
+function App() {
   return (
     <EpisodeProvider>
       <Suspense fallback={<div>Loading components...</div>}>
@@ -20,6 +20,6 @@ const App = () => {
       </Suspense>
     </EpisodeProvider>
   );
-};
+}
 
 export default App;
