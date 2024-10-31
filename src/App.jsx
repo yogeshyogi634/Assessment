@@ -1,7 +1,25 @@
-import "./App.css";
+import React, { Suspense, lazy } from "react";
+import EpisodeProvider from "./context/EpisodeContext";
 
-function App() {
-  return <div className="text-yellow-600">Hello</div>;
-}
+// Lazy load components
+const EpisodeList = lazy(() => import("./components/EpisodeList/EpisodeList"));
+const CharacterFeed = lazy(() =>
+  import("./components/CharacterFeed/CharacterFeed")
+);
+
+const App = () => {
+  return (
+    <EpisodeProvider>
+      <Suspense fallback={<div>Loading components...</div>}>
+        <div className="flex">
+          {/* Sidebar for episodes */}
+          <EpisodeList />
+          {/* Main view for characters */}
+          <CharacterFeed />
+        </div>
+      </Suspense>
+    </EpisodeProvider>
+  );
+};
 
 export default App;
